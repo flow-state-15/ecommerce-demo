@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   CartSession.associate = function(models) {
     // associations can be defined here
+    CartSession.hasMany(models.CartItem, {
+      as: 'items',
+      foreignKey: 'session_id'
+    })
   };
   return CartSession;
 };

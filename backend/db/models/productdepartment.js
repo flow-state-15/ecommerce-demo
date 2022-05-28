@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ProductDepartment.associate = function(models) {
     // associations can be defined here
+    ProductDepartment.hasMany(models.Product, {
+      as: 'products',
+      foreignKey: 'dept_id'
+    })
   };
   return ProductDepartment;
 };

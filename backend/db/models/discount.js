@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Discount.associate = function(models) {
     // associations can be defined here
+    Discount.hasMany(models.Product, {
+      as: 'products',
+      foreignKey: 'discount_id'
+    })
   };
   return Discount;
 };

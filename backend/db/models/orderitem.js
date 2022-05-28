@@ -7,6 +7,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   OrderItem.associate = function(models) {
     // associations can be defined here
+    OrderItem.belongsTo(models.Product, {
+      foreignKey: 'product_id'
+    })
   };
   return OrderItem;
 };

@@ -8,6 +8,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Order.associate = function(models) {
     // associations can be defined here
+    Order.hasMany(models.OrderItem, {
+      as: 'items',
+      foreignKey: 'order_id'
+    }),
+    Order.belongsTo(models.UserPayment, {
+      as: 'payment_method',
+      foreignKey: 'payment_id'
+    })
   };
   return Order;
 };

@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Product.associate = function(models) {
     // associations can be defined here
+    Product.belongsToMany(models.User, {
+      through: 'favorite_products',
+      foreignKey: 'product_id'
+    })
   };
   return Product;
 };

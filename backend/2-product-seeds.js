@@ -1,21 +1,21 @@
 'use strict';
 
-const { faker } = require('@faker-js/faker')
+// const { faker } = require('@faker-js/faker')
 
-function generate(faker_func, quantity, unique=false){
-  const loop = (faker_func, quantity) => {
-    const _ = []
-      for(let i=0; i<quantity; ++i){
-        _.push(faker_func())
-      }
-    return _
-  }
-  if(unique) return [...new Set(loop(faker_func, quantity))]
-  return loop(faker_func, quantity)
-}
+// function generate(faker_func, quantity, unique=false){
+//   const loop = (faker_func, quantity) => {
+//     const _ = []
+//       for(let i=0; i<quantity; ++i){
+//         _.push(faker_func())
+//       }
+//     return _
+//   }
+//   if(unique) return [...new Set(loop(faker_func, quantity))]
+//   return loop(faker_func, quantity)
+// }
 
-const dept_set = generate(faker.commerce.department, 100, true)
-const prod_names = generate(faker.commerce.product, 20, false)
+// const dept_set = generate(faker.commerce.department, 100, true)
+// const prod_names = generate(faker.commerce.product, 20, false)
 
 // const product_data = [
 //   {
@@ -29,7 +29,7 @@ const prod_names = generate(faker.commerce.product, 20, false)
 
 // const dept_array = [...dept_set].sort()
 
-console.log(prod_names, prod_names.length)
+// console.log(prod_names, prod_names.length)
 
 // module.exports = {
 //   up: (queryInterface, Sequelize) => {
@@ -42,8 +42,8 @@ console.log(prod_names, prod_names.length)
 //         name: 'John Doe',
 //         isBetaMember: false
 //       }], {});
+//       return queryInterface.bulkInsert('Products', [], {});
 //     */
-//     return queryInterface.bulkInsert('Products', product_data, {});
 //   },
 
 //   down: (queryInterface, Sequelize) => {
