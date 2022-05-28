@@ -12,27 +12,27 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      description: {
+      desc: {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      img: {
+        type: Sequelize.TEXT
+      },
       price: {
-        type: Sequelize.FLOAT,
-        allowNull: false
+        type: Sequelize.DECIMAL(10,2)
       },
-      brand: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      department_id: {
+      dept_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {}
+        references: { model: { tableName: 'ProductDepartments' } }
       },
-      inventory_id: {
+      inv_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {}
+        references: { model: { tableName: 'ProductInventories' } }
+      },
+      discount_id: {
+        type: Sequelize.INTEGER,
+        references: { model: { tableName: 'Discounts' } }
       },
       createdAt: {
         allowNull: false,
