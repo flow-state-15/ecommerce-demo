@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false
       },
       total: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       createdAt: {
         allowNull: false,

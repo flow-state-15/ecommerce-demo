@@ -1,6 +1,7 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 const { Validator } = require('sequelize');
+const { Sequelize } = require('.');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -51,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     User.belongsToMany(models.Product, {
       as: 'favorites',
-      through: 'favorite_products',
+      through: 'Favorite_Products',
       foreignKey: 'user_id'
     }),
     User.hasOne(models.UserAddress, {

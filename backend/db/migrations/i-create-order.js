@@ -14,7 +14,8 @@ module.exports = {
         allowNull: false
       },
       total: {
-        type: Sequelize.DECIMAL(10,2)
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false
       },
       payment_id: {
         type: Sequelize.INTEGER,
@@ -22,7 +23,8 @@ module.exports = {
         allowNull: false
       },
       transaction_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

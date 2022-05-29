@@ -21,7 +21,7 @@ module.exports = {
         allowNull: false
       },
       card_number: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BIGINT,
         allowNull: false
       },
       expiry: {
